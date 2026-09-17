@@ -1,1 +1,1 @@
-python -m nuitka --onefile hello.py
+python -m nuitka --onefile --follow-imports --windows-disable-console --company-name="MeinUnternehmen" --product-name="MeinTool" --product-version="1.0.0" --output-filename=hello.exe hello.py

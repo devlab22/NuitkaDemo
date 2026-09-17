@@ -1,7 +1,6 @@
 
 from requests import request
 import json
-import meraki
 
 def printJson(data):
     print(json.dumps(data, indent=4))
@@ -9,17 +8,16 @@ def printJson(data):
 def talk(message):
     return "Talk " + message
 
-def getCountry(name:str):
+def getUsers():
     
-    url = f'https://restcountries.com/v3.1/name/{name}'
+    url = f'https://jsonplaceholder.typicode.com/users'
     response = request("GET", url).json()
-    return response[0]
+    return response
 
 
 def main():
-    print(meraki.__version__)
     print(talk("Hello World"))
-    printJson(getCountry('germany'))
+    printJson(getUsers())
 
     
 
